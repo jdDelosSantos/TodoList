@@ -1,3 +1,4 @@
+import { todo } from 'node:test';
 import React,{useEffect, useState} from 'react'
 
 
@@ -5,25 +6,35 @@ interface ApiResponse {
   message: string;
 }
 
+interface Todo{
+  id: number,
+  text: string,
+  completed: boolean,
+}
+
 function index() {
   const [message, setMessage] = useState("Fetching Api Response");
+  const [todos, setTodos] = useState<Todo[]>([]);
+  const [newTodoText, setNewTodoText] = useState('');
+  
 
-  useEffect(() => {
-    fetch("http://localhost:8080/api/home")
-  .then((res) => {
-    if (!res.ok) {
-      setMessage("Couldnt fetch data :(");
-      throw new Error('Network response was not ok');
+  useEffect (()=>{
+    fetchTodos();
+  },[])
+
+  const fetchTodos = async()=>{
+    try{
+      const response = await fetch(`${process.env.NEXT_PUBLIC_LOCAL_CLIENT}/api/home`);
+      if (!response.ok ){
+        throw new Error(`HTTP error! Status: ${response.status}`)
+      }
+      const data: ApiResponse = await response.json();
+      setMessage(data.message);
+    }catch (err){
+      console.error("Error Fetching Todos: ", err);
     }
-    return res.json() as Promise<ApiResponse>;
-  })
-  .then((data) => {
-    setMessage(data.message);
-  })
-  .catch((error) => {
-    console.error('There has been a problem with your fetch operation:', error);
-  });
-  }, [])
+  }
+
   
   return (
     <div>{message}</div>

@@ -4,9 +4,7 @@
   "description": "Nodejs Backend Server",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server",
-    "dev": "nodemon server"
+    "start": "ts-node src/server.ts"
   },
   "author": "Daniel Delos Santos",
   "license": "ISC",
@@ -15,6 +13,10 @@
     "express": "^4.21.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.14",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2"
   }
 }
