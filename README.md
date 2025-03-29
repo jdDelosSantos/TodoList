@@ -2,80 +2,73 @@
 
 Quick To-Do List software as Requirement
 
-
-
-
 ## Table of Contents
+
 - [Features](#features)
 - [Installation](#installation)
 
-
-
-
 ## Features
+
 - **Todo List Functions:** Create, Check and Remove Todos.
 - **Todo List Display:** Displays all Todos.
 - **Nodejs Backend w/ Typescript:** Frontend Next.js connected to Node.js Backend
 
-
-
 ## Installation
+
 To get started with this project, follow these steps:
 
-1. Clone the Repository:
+1.  **Clone the Repository:**
 
     ```bash
-    git clone [https://github.com/jdDelosSantos/TodoList.git]
+    git clone [https://github.com/jdDelosSantos/TodoList.git](https://github.com/jdDelosSantos/TodoList.git)
     ```
 
-2. Navigate to Project Directory:
+2.  **Navigate to Project Directory:**
 
     ```bash
-    cd Todolist
+    cd TodoList
     ```
 
-3. Navigate to Server folder:
+3.  **Open Two Git Bash Terminals:**
+    * You will need to run the backend and frontend simultaneously. Open two separate Git Bash terminals.
 
-    ```bash
-    cd server
-    ```
+4.  **In the First Terminal (Backend):**
+    * Navigate to the `server` folder:
 
-4. Install Dependencies:
+        ```bash
+        cd server
+        ```
 
-    ```bash
-    npm install
-    ```
+    * Install Dependencies:
 
-5. Start Node.js Server
+        ```bash
+        npm install
+        ```
 
-    ```bash
-    npm run start
-    ```
+    * Start Node.js Server:
 
-6. Navigate up a Folder from server folder:
+        ```bash
+        npm run start
+        ```
 
-    ```bash
-    cd ..
-    ```
+5.  **In the Second Terminal (Frontend):**
+    * Navigate back to the root directory (TodoList):
 
-7. Navigate to Todolist folder:
+        ```bash
+        cd ../todolist
+        ```
+    * Install Dependencies:
 
-    ```bash
-    cd todolist
-    ```
+        ```bash
+        npm install
+        ```
 
-8. Install Dependencies:
+    * Start Next.js Frontend:
 
-    ```bash
-    npm install
-    ```
+        ```bash
+        npm run dev
+        ```
 
-9. Start Next.js Frontend
-
-    ```bash
-    npm run dev
-    ```
-
-
-
-
+6.  **Access the Application:**
+    * The frontend will be accessible at `http://localhost:3000` in your web browser.
+    * The backend will be running on `http://localhost:8080` (or the port specified in your server configuration).
